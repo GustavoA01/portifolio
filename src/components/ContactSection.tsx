@@ -1,0 +1,97 @@
+'use client';
+
+import { BriefcaseBusiness, Check, Copy, Mail, Phone } from 'lucide-react';
+import { useState } from 'react';
+
+import { Button } from '@/components/ui/button';
+import { profile } from '@/data/constants';
+
+const phoneIsConfigured = profile.phone !== 'Adicione seu telefone aqui';
+
+export const ContactSection = () => {
+  const [copiedField, setCopiedField] = useState<'email' | 'phone' | null>(
+    null,
+  );
+
+  const copyToClipboard = async (value: string, field: 'email' | 'phone') => {
+    await navigator.clipboard.writeText(value);
+    setCopiedField(field);
+    window.setTimeout(() => setCopiedField(null), 1800);
+  };
+
+  return (
+    <section id="contato" className="mx-auto w-full max-w-6xl px-5 py-16">
+      <div className="bg-card rounded-lg border p-6 md:p-8">
+        <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div className="select-none">
+            <p className="text-primary text-sm font-medium">Contato</p>
+            <h2 className="mt-2 text-3xl font-semibold">
+              Vamos conversar sobre tecnologia e projetos
+            </h2>
+          </div>
+          <Button asChild variant="outline">
+            <a href={profile.linkedin} target="_blank" rel="noreferrer">
+              <BriefcaseBusiness className="size-4" />
+              LinkedIn
+            </a>
+          </Button>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <button
+            type="button"
+            onClick={() => copyToClipboard(profile.email, 'email')}
+            className="hover:border-primary/50 hover:bg-muted/30 flex cursor-pointer items-center gap-4 rounded-md border p-4 text-left transition-colors"
+          >
+            <span className="bg-primary/10 text-primary flex size-11 shrink-0 items-center justify-center rounded-md">
+              <Mail className="size-5" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="text-muted-foreground block text-sm select-none">
+                Email
+              </span>
+              <span className="block truncate font-medium">
+                {profile.email}
+              </span>
+            </span>
+            <span className="text-primary select-none">
+              {copiedField === 'email' ? (
+                <Check className="size-4" />
+              ) : (
+                <Copy className="size-4" />
+              )}
+            </span>
+          </button>
+
+          <button
+            type="button"
+            disabled={!phoneIsConfigured}
+            onClick={() => copyToClipboard(profile.phone, 'phone')}
+            className="hover:border-primary/50 hover:bg-muted/30 disabled:hover:border-border flex cursor-pointer items-center gap-4 rounded-md border p-4 text-left transition-colors disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:bg-transparent"
+          >
+            <span className="bg-primary/10 text-primary flex size-11 shrink-0 items-center justify-center rounded-md">
+              <Phone className="size-5" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="text-muted-foreground block text-sm select-none">
+                Telefone
+              </span>
+              <span className="block truncate font-medium">
+                {profile.phone}
+              </span>
+            </span>
+            {phoneIsConfigured && (
+              <span className="text-primary select-none">
+                {copiedField === 'phone' ? (
+                  <Check className="size-4" />
+                ) : (
+                  <Copy className="size-4" />
+                )}
+              </span>
+            )}
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
