@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: 'Gustavo Aguiar | Portifolio',
   description:
-    'Portifolio de Gustavo Aguiar, desenvolvedor focado em Next.js, TypeScript, IA e produtos digitais.',
+    'Portifolio de Gustavo Aguiar, desenvolvedor front-end especializado em React e Next.js',
 };
 
 const RootLayout = ({

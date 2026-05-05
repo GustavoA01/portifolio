@@ -1,8 +1,6 @@
 'use client';
-
 import { BriefcaseBusiness, Check, Copy, Mail, Phone } from 'lucide-react';
 import { useState } from 'react';
-
 import { Button } from '@/components/ui/button';
 import { profile } from '@/data/constants';
 
@@ -25,9 +23,7 @@ export const ContactSection = () => {
         <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="select-none">
             <p className="text-primary text-sm font-medium">Contato</p>
-            <h2 className="mt-2 text-3xl font-semibold">
-              Vamos conversar sobre tecnologia e projetos
-            </h2>
+            <h2 className="mt-2 text-3xl font-semibold">Entre em contato</h2>
           </div>
           <Button asChild variant="outline">
             <a href={profile.linkedin} target="_blank" rel="noreferrer">
@@ -37,24 +33,24 @@ export const ContactSection = () => {
           </Button>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid min-w-0 gap-4 md:grid-cols-2">
           <button
             type="button"
             onClick={() => copyToClipboard(profile.email, 'email')}
-            className="hover:border-primary/50 hover:bg-muted/30 flex cursor-pointer items-center gap-4 rounded-md border p-4 text-left transition-colors"
+            className="hover:border-primary/50 hover:bg-muted/30 flex min-w-0 cursor-pointer items-center gap-3 overflow-hidden rounded-md border p-4 text-left transition-colors sm:gap-4"
           >
             <span className="bg-primary/10 text-primary flex size-11 shrink-0 items-center justify-center rounded-md">
               <Mail className="size-5" />
             </span>
-            <span className="min-w-0 flex-1">
+            <span className="min-w-0 flex-1 overflow-hidden">
               <span className="text-muted-foreground block text-sm select-none">
                 Email
               </span>
-              <span className="block truncate font-medium">
+              <span className="block max-w-full truncate font-medium">
                 {profile.email}
               </span>
             </span>
-            <span className="text-primary select-none">
+            <span className="text-primary shrink-0 select-none">
               {copiedField === 'email' ? (
                 <Check className="size-4" />
               ) : (
@@ -67,21 +63,21 @@ export const ContactSection = () => {
             type="button"
             disabled={!phoneIsConfigured}
             onClick={() => copyToClipboard(profile.phone, 'phone')}
-            className="hover:border-primary/50 hover:bg-muted/30 disabled:hover:border-border flex cursor-pointer items-center gap-4 rounded-md border p-4 text-left transition-colors disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:bg-transparent"
+            className="hover:border-primary/50 hover:bg-muted/30 disabled:hover:border-border flex min-w-0 cursor-pointer items-center gap-3 overflow-hidden rounded-md border p-4 text-left transition-colors disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:bg-transparent sm:gap-4"
           >
             <span className="bg-primary/10 text-primary flex size-11 shrink-0 items-center justify-center rounded-md">
               <Phone className="size-5" />
             </span>
-            <span className="min-w-0 flex-1">
+            <span className="min-w-0 flex-1 overflow-hidden">
               <span className="text-muted-foreground block text-sm select-none">
                 Telefone
               </span>
-              <span className="block truncate font-medium">
+              <span className="block max-w-full truncate font-medium">
                 {profile.phone}
               </span>
             </span>
             {phoneIsConfigured && (
-              <span className="text-primary select-none">
+              <span className="text-primary shrink-0 select-none">
                 {copiedField === 'phone' ? (
                   <Check className="size-4" />
                 ) : (

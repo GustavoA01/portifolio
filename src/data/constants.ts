@@ -15,13 +15,13 @@ export type Project = {
 
 export const profile = {
   name: 'Gustavo Aguiar',
-  tagline: 'Next.js, IA e produtos digitais',
+  tagline: 'Desenvolvedor Front-end · React · Next.js · TypeScript',
   headline:
-    'Desenvolvedor focado em interfaces modernas, aplicações completas com Next.js e integrações reais com IA, Firebase e APIs externas',
+    'Desenvolvo interfaces modernas e aplicações completas, desde o front-end ao banco de dados, com integrações de IA e APIs externas',
   github: 'https://github.com/GustavoA01',
   linkedin: 'https://www.linkedin.com/in/aguiar-gustavo/',
   email: 'gustavoaguiar14325@gmail.com',
-  phone: '(31) 9 9610-0766',
+  phone: '(31) 99610-0766',
 };
 
 export const navigationItems = [
@@ -53,30 +53,30 @@ export const projects: Project[] = [
     repo: 'https://github.com/GustavoA01/Bookly',
     accent: 'from-teal-500 to-emerald-400',
     features: [
-      'Busca paginada pela Google Books API',
-      'Biblioteca com datas, páginas lidas e capa personalizada',
-      'Listas temáticas para organizar livros',
-      'Bookly IA com recomendações baseadas na coleção',
+      'Busca de livros com a Google Books API',
+      'Acompanhamento de leitura com datas, progresso e capa customizada',
+      'Listas personalizadas para organizar a coleção',
+      'IA que analisa sua biblioteca e sugere o próximo livro',
     ],
     integrations: ['Firebase Auth', 'Firestore', 'Gemini', 'Cloudinary'],
   },
   {
     name: 'Next Track',
     summary:
-      'Recomendações musicais personalizadas com Gemini, Spotify OAuth, player integrado e estatísticas.',
+      'Recomendações musicais personalizadas com Gemini, Spotify, player integrado e estatísticas.',
     problem:
       'Recomendações musicais automáticas tendem a repetir padrões e ignorar contexto, humor e preferências específicas.',
     solution:
-      'O Next Track conecta Spotify e Gemini para gerar playlists por conversa, ajustar vibes e salvar faixas direto na conta do usuário.',
+      'Você se conecta ao Spotify, escolhe uma playlist e conversa com a IA para afinar o que quer ouvir e salvar suas faixas direto na sua conta',
     icon: Music2,
     href: 'https://next-track-gustavo.vercel.app/',
     repo: 'https://github.com/GustavoA01/Next-Track',
     accent: 'from-cyan-500 to-amber-400',
     features: [
       'OAuth com Spotify e acesso às playlists',
-      'Chat com Gemini baseado na playlist completa',
-      'Sliders de energia, humor e instrumentalidade',
-      'Player integrado, estatísticas e histórico persistido',
+      'Chat com IA que entende o contexto da sua playlist',
+      'Controles de energia, humor e instrumentalidade para calibrar as recomendações',
+      'Player integrado, estatísticas da playlist e histórico de mensagens salvo',
     ],
     integrations: [
       'Spotify Web API',

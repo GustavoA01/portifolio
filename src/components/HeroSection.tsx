@@ -1,5 +1,4 @@
 import { ArrowUpRight, Code2, Sparkles } from 'lucide-react';
-
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { profile, projects } from '@/data/constants';

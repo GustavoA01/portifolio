@@ -10,12 +10,12 @@ export const ProjectsSection = () => (
             Projetos principais
           </p>
           <h2 className="mt-2 text-3xl font-semibold">
-            Produtos com IA, dados e integrações reais
+            Projetos reais, com IA e integrações
           </h2>
         </div>
         <p className="text-muted-foreground mt-4 max-w-2xl text-lg leading-8">
           Dois projetos completos, pensados para resolver problemas reais:
-          leitura organizada e descoberta musical personalizada
+          organização de leitura e descoberta musical personalizada
         </p>
       </div>
 
