@@ -5,7 +5,7 @@ import { ProjectsSection } from '@/components/ProjectsSection';
 import { StackSection } from '@/components/StackSection';
 import { Separator } from '@/components/ui/separator';
 
-const Home = () => (
+const HomePage = () => (
   <main className="bg-background text-foreground min-h-screen">
     <Header />
     <HeroSection />
@@ -16,4 +16,4 @@ const Home = () => (
   </main>
 );
 
-export default Home;
+export default HomePage;

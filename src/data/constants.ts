@@ -17,7 +17,7 @@ export const profile = {
   name: 'Gustavo Aguiar',
   tagline: 'Desenvolvedor Front-end · React · Next.js · TypeScript',
   headline:
-    'Desenvolvo interfaces modernas e aplicações completas, desde o front-end ao banco de dados, com integrações de IA e APIs externas',
+    'Desenvolvo interfaces modernas e aplicações completas, desde o front-end ao banco de dados, com integrações de IAs e APIs',
   github: 'https://github.com/GustavoA01',
   linkedin: 'https://www.linkedin.com/in/aguiar-gustavo/',
   email: 'gustavoaguiar14325@gmail.com',
@@ -43,11 +43,11 @@ export const projects: Project[] = [
   {
     name: 'Bookly',
     summary:
-      'Biblioteca pessoal inteligente para buscar, salvar, organizar livros e receber sugestões com IA.',
+      'Biblioteca pessoal inteligente para buscar, salvar, organizar livros e receber sugestões com IA',
     problem:
-      'Leitores costumam espalhar livros, listas e progresso de leitura em ferramentas diferentes.',
+      'Leitores têm dificuldade de acompanhar o que já leram, o que estão lendo e o que ainda querem ler, além de estabelecer metas e descobrir novos livros',
     solution:
-      'O Bookly centraliza biblioteca pessoal, listas temáticas, detalhes de leitura e recomendações do Gemini em uma experiência responsiva.',
+      'O Bookly centraliza biblioteca pessoal, listas temáticas, detalhes de leitura e recomendações do Gemini em uma experiência responsiva',
     icon: BookOpen,
     href: 'https://bookly-gustavo.vercel.app/',
     repo: 'https://github.com/GustavoA01/Bookly',
@@ -63,9 +63,9 @@ export const projects: Project[] = [
   {
     name: 'Next Track',
     summary:
-      'Recomendações musicais personalizadas com Gemini, Spotify, player integrado e estatísticas.',
+      'Recomendações musicais personalizadas com Gemini, Spotify, player integrado e estatísticas',
     problem:
-      'Recomendações musicais automáticas tendem a repetir padrões e ignorar contexto, humor e preferências específicas.',
+      'Recomendações musicais automáticas tendem a repetir padrões e ignorar contexto, humor e preferências específicas',
     solution:
       'Você se conecta ao Spotify, escolhe uma playlist e conversa com a IA para afinar o que quer ouvir e salvar suas faixas direto na sua conta',
     icon: Music2,
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     features: [
       'OAuth com Spotify e acesso às playlists',
       'Chat com IA que entende o contexto da sua playlist',
-      'Controles de energia, humor e instrumentalidade para calibrar as recomendações',
+      'Controles de energia e instrumentalidade para refinar as recomendações',
       'Player integrado, estatísticas da playlist e histórico de mensagens salvo',
     ],
     integrations: [
