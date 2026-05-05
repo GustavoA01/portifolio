@@ -17,7 +17,7 @@ type ProjectCardProps = {
 
 export const ProjectCard = ({ project }: ProjectCardProps) => (
   <Card className="overflow-hidden">
-    <div className={`h-2 bg-gradient-to-r ${project.accent}`} />
+    <div className={`h-2 bg-linear-to-r ${project.accent}`} />
     <CardHeader>
       <div className="bg-primary/10 text-primary mb-4 flex size-11 items-center justify-center rounded-md">
         <project.icon className="size-5" />
