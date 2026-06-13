@@ -1,25 +1,24 @@
-'use client';
+﻿'use client';
+import { motion } from 'framer-motion';
 import { BriefcaseBusiness, Check, Copy, Mail, Phone } from 'lucide-react';
-import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { profile } from '@/data/constants';
+import { useCopyText } from '@/hooks/useCopyText';
 
 const phoneIsConfigured = profile.phone !== 'Adicione seu telefone aqui';
 
 export const ContactSection = () => {
-  const [copiedField, setCopiedField] = useState<'email' | 'phone' | null>(
-    null,
-  );
-
-  const copyToClipboard = async (value: string, field: 'email' | 'phone') => {
-    await navigator.clipboard.writeText(value);
-    setCopiedField(field);
-    window.setTimeout(() => setCopiedField(null), 1800);
-  };
+  const { copiedField, copyToClipboard } = useCopyText();
 
   return (
     <section id="contato" className="mx-auto w-full max-w-6xl px-5 py-16">
-      <div className="bg-card rounded-lg border p-6 md:p-8">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="bg-card rounded-lg border p-6 md:p-8"
+      >
         <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="select-none">
             <p className="text-primary text-sm font-medium">Contato</p>
@@ -34,8 +33,10 @@ export const ContactSection = () => {
         </div>
 
         <div className="grid min-w-0 gap-4 md:grid-cols-2">
-          <button
+          <motion.button
             type="button"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.99 }}
             onClick={() => copyToClipboard(profile.email, 'email')}
             className="hover:border-primary/50 hover:bg-muted/30 flex min-w-0 cursor-pointer items-center gap-3 overflow-hidden rounded-md border p-4 text-left transition-colors sm:gap-4"
           >
@@ -57,11 +58,13 @@ export const ContactSection = () => {
                 <Copy className="size-4" />
               )}
             </span>
-          </button>
+          </motion.button>
 
-          <button
+          <motion.button
             type="button"
             disabled={!phoneIsConfigured}
+            whileHover={phoneIsConfigured ? { y: -2 } : undefined}
+            whileTap={phoneIsConfigured ? { scale: 0.99 } : undefined}
             onClick={() => copyToClipboard(profile.phone, 'phone')}
             className="hover:border-primary/50 hover:bg-muted/30 disabled:hover:border-border flex min-w-0 cursor-pointer items-center gap-3 overflow-hidden rounded-md border p-4 text-left transition-colors disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:bg-transparent sm:gap-4"
           >
@@ -85,9 +88,9 @@ export const ContactSection = () => {
                 )}
               </span>
             )}
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

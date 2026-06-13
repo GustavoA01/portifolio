@@ -1,4 +1,4 @@
-import { BookOpen, Music2, type LucideIcon } from 'lucide-react';
+﻿import { BookOpen, Music2, type LucideIcon } from 'lucide-react';
 
 export type Project = {
   name: string;
@@ -8,6 +8,7 @@ export type Project = {
   icon: LucideIcon;
   href: string;
   repo: string;
+  demoVideoUrl?: string;
   accent: string;
   features: string[];
   integrations: string[];
@@ -71,6 +72,8 @@ export const projects: Project[] = [
     icon: Music2,
     href: 'https://next-track-gustavo.vercel.app/',
     repo: 'https://github.com/GustavoA01/Next-Track',
+    // demoVideoUrl:
+    //   'https://github.com/user-attachments/assets/2afa0066-0e8b-4b83-81ee-8015c6a5d084',
     accent: 'from-cyan-500 to-amber-400',
     features: [
       'OAuth com Spotify e acesso às playlists',

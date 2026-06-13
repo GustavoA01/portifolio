@@ -1,5 +1,4 @@
 'use client';
-
 import { ThemeProvider } from './ThemeProvider';
 import { TooltipProvider } from './ui/tooltip';
 
