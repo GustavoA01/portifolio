@@ -176,7 +176,7 @@ export const projects: Project[] = [
     summary:
       'Web app + agente Python para trocar wallpapers manualmente ou em intervalos de tempo',
     about:
-      'Trocar o wallpaper com frequência costuma ser chato: você precisa baixar as imagens, organizá-las em pastas e trocar manualmente pelas configurações do sistema — sem nenhuma forma simples de automatizar esse processo.',
+      'Trocar o wallpaper com frequência costuma ser chato: você precisa baixar as imagens, organizá-las em pastas e trocar manualmente pelas configurações do sistema, sem nenhuma forma simples de automatizar esse processo.',
     problem:
       'Manter wallpapers organizados e trocá-los com frequência exige salvar imagens em pastas, repetir ações no sistema operacional e não há uma forma simples de automatizar a troca em intervalos.',
     solution:
