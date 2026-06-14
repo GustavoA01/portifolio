@@ -55,7 +55,7 @@ export const projects: Project[] = [
     name: 'Bookly',
     tagline: 'Sua biblioteca pessoal inteligente',
     summary:
-      'Biblioteca pessoal com busca de livros, organização por listas e recomendações via IA',
+      'Biblioteca pessoal com busca de livros, organização por listas e recomendações com IA',
     about:
       'O Bookly é uma aplicação web de biblioteca pessoal. O usuário busca livros pela Google Books API, salva na própria coleção, organiza em listas temáticas e acompanha o progresso de leitura com datas, páginas lidas e capa personalizada. O diferencial é o Bookly IA, um chat que analisa a biblioteca do usuário e sugere o próximo livro a ler.',
     problem:
@@ -93,7 +93,7 @@ export const projects: Project[] = [
       'Biblioteca pessoal com progresso de leitura e capa customizada',
       'Listas temáticas para organizar a coleção',
       'Bookly IA com Gemini para recomendações contextuais',
-      'Upload de capa via Cloudinary',
+      'Upload de capa com Cloudinary',
       'Autenticação com login, cadastro e redefinição de senha',
       'Interface responsiva com dark mode ativo por padrão',
     ],
@@ -141,7 +141,7 @@ export const projects: Project[] = [
       {
         title: 'Player integrado',
         description:
-          'Ouça as faixas sugeridas na interface via Spotify Web Playback SDK, sem sair do app.',
+          'Ouça as faixas sugeridas na interface usando o Spotify Web Playback SDK, sem sair do app.',
       },
       {
         title: 'Estatísticas da playlist',
@@ -153,7 +153,7 @@ export const projects: Project[] = [
       'Login OAuth com Spotify e listagem das playlists do usuário',
       'Chat com Gemini 2.5 Flash baseado no contexto da playlist',
       'Controles de energia, humor e instrumentalidade',
-      'Player integrado via Spotify Web Playback SDK',
+      'Player integrado ao Spotify Web Playback SDK',
       'Salvar músicas sugeridas direto nas playlists do Spotify',
       'Estatísticas com artistas, gêneros e gráfico de popularidade',
       'Histórico de conversa persistido no Firebase por playlist',
@@ -176,11 +176,11 @@ export const projects: Project[] = [
     summary:
       'Web app + agente Python para trocar wallpapers manualmente ou em intervalos de tempo',
     about:
-      'O Chameleon Wallpaper é dividido em duas partes: uma web app em Next.js com Prisma e PostgreSQL para criar pastas, fazer upload de imagens no Cloudinary, cadastrar dispositivos e enviar comandos, e um agente Python que roda em segundo plano no Windows, escuta esses comandos e aplica o wallpaper no sistema operacional, manualmente ou em intervalos configuráveis.',
+      'Trocar o wallpaper com frequência costuma ser chato: você precisa baixar as imagens, organizá-las em pastas e trocar manualmente pelas configurações do sistema — sem nenhuma forma simples de automatizar esse processo.',
     problem:
       'Manter wallpapers organizados e trocá-los com frequência exige salvar imagens em pastas, repetir ações no sistema operacional e não há uma forma simples de automatizar a troca em intervalos.',
     solution:
-      'A web app centraliza coleções de imagens e dispositivos. O agente local no Windows recebe comandos da interface e aplica o wallpaper via API nativa do sistema, com suporte a troca manual, automática por intervalo e inicialização junto com o Windows.',
+      'O painel web centraliza suas imagens e dispositivos em coleções. Um agente instalado no Windows recebe os comandos e troca o wallpaper automaticamente, com opções de troca manual, por intervalo de tempo, ou já na inicialização do sistema.',
     note: 'O agente que efetivamente troca o papel de parede funciona apenas no Windows, pois usa winreg e a API SystemParametersInfoW do sistema.',
     iconUrl: '/project-icons/chamaleon-icon.png',
     href: 'https://chameleon-wallpaper.vercel.app/',
@@ -214,7 +214,7 @@ export const projects: Project[] = [
       'Criação de pastas para organizar coleções de wallpapers',
       'Upload e gerenciamento de imagens com Cloudinary',
       'Cadastro de dispositivos e configuração de intervalo de troca',
-      'Troca manual ou automática via comandos da web app',
+      'Troca manual ou automática por meio de comandos da web app',
       'Agente Flask em Python que aplica o wallpaper no Windows',
       'Tarefa agendada do Windows para iniciar o agente automaticamente',
     ],
