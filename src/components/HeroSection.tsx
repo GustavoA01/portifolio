@@ -1,6 +1,7 @@
-﻿'use client';
+'use client';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Code2, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Code2 } from 'lucide-react';
+import { ProjectIcon } from '@/components/ProjectIcon';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { profile, projects } from '@/data/constants';
@@ -63,47 +64,53 @@ export const HeroSection = () => (
       </motion.div>
     </motion.div>
 
-    <motion.div
-      initial={{ opacity: 0, y: 28, scale: 0.98 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
+    <motion.aside
+      initial={{ opacity: 0, y: 28 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.22, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-      className="relative flex min-h-90 items-center justify-center select-none"
+      className="flex items-center select-none"
     >
-      <div className="bg-muted/35 absolute inset-0 rounded-xl border" />
-      <div className="bg-card relative w-full max-w-md rounded-lg border p-4 shadow-2xl">
-        <div className="mb-4 flex items-center justify-between">
-          <div className="flex gap-2">
-            <span className="size-3 rounded-full bg-red-400" />
-            <span className="size-3 rounded-full bg-amber-400" />
-            <span className="size-3 rounded-full bg-emerald-400" />
-          </div>
-          <Sparkles className="text-primary size-5" />
+      <div className="bg-card w-full rounded-2xl border p-5 shadow-sm lg:p-6">
+        <div className="mb-5">
+          <p className="text-primary text-sm font-medium">
+            Projetos em destaque
+          </p>
+          <p className="text-muted-foreground mt-1 text-sm leading-6">
+            Aplicações em produção com IA, APIs e integrações reais
+          </p>
         </div>
-        <div className="space-y-3">
+
+        <div className="flex flex-col gap-3">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={project.name}
+              href={`#${project.id}`}
+              aria-label={`Ir para a seção do projeto ${project.name}`}
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.42 + index * 0.08, duration: 0.4 }}
-              className="bg-background rounded-md border p-4"
+              className="hover:bg-muted/40 group cursor-pointer rounded-xl p-4 transition-colors"
             >
               <div
-                className={`mb-4 h-2 rounded-full bg-linear-to-r ${project.accent}`}
+                className={`mb-3 h-1 w-12 rounded-full bg-linear-to-r ${project.accent} transition-all group-hover:w-16`}
               />
               <div className="flex items-start gap-3">
-                <project.icon className="text-primary mt-1 size-5" />
-                <div>
+                <ProjectIcon
+                  src={project.iconUrl}
+                  alt={`Ícone do ${project.name}`}
+                  size="sm"
+                />
+                <div className="min-w-0">
                   <p className="font-medium">{project.name}</p>
                   <p className="text-muted-foreground mt-1 text-sm leading-6">
                     {project.summary}
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
-    </motion.div>
+    </motion.aside>
   </section>
 );

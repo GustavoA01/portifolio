@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, CheckCircle2, Code2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { projectBaseStack, type Project } from '@/data/constants';
+import { ProjectIcon } from '@/components/ProjectIcon';
 
 type ProjectCardProps = {
   project: Project;
@@ -33,36 +34,19 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => (
   >
     <div className={`h-2 bg-linear-to-r ${project.accent}`} />
     <CardHeader>
-      <motion.div
-        whileHover={{ rotate: -4, scale: 1.06 }}
-        transition={{ type: 'spring', stiffness: 320, damping: 18 }}
-        className="bg-primary/10 text-primary mb-4 flex size-11 items-center justify-center rounded-md"
-      >
-        <project.icon className="size-5" />
-      </motion.div>
+      <ProjectIcon
+        src={project.iconUrl}
+        alt={`Ícone do ${project.name}`}
+        size="sm"
+        className="mb-4"
+      />
       <CardTitle>{project.name}</CardTitle>
       <CardDescription className="text-base leading-7 select-none">
         {project.summary}
       </CardDescription>
     </CardHeader>
     <CardContent className="space-y-6">
-      {project.demoVideoUrl && (
-        <div className="select-none">
-          <p className="mb-3 text-sm font-medium">Demonstração rápida</p>
-          <div className="bg-muted/30 overflow-hidden rounded-md border">
-            <video
-              src={project.demoVideoUrl}
-              className="aspect-video w-full object-cover"
-              controls
-              muted
-              playsInline
-              preload="metadata"
-            />
-          </div>
-        </div>
-      )}
-
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4">
         <div className="bg-muted/30 rounded-md border p-4 select-none">
           <p className="text-muted-foreground text-xs font-medium uppercase">
             Problema
