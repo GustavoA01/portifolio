@@ -1,4 +1,4 @@
-import type { Project } from '@/data/constants';
+import { Project } from '@/data/types';
 
 export type ProjectPartProps = {
   project: Project;

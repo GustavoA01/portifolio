@@ -1,5 +1,4 @@
 'use client';
-
 import { motion } from 'framer-motion';
 import { ProjectSection } from '@/components/ProjectSection';
 import { projects } from '@/data/constants';

@@ -1,14 +1,14 @@
 'use client';
 import { motion } from 'framer-motion';
-import { ProjectAbout } from '@/components/ProjectSection/components/ProjectAbout';
-import { ProjectContext } from '@/components/ProjectSection/components/ProjectContext';
-import { ProjectDemo } from '@/components/ProjectSection/components/ProjectDemo';
-import { ProjectFeatures } from '@/components/ProjectSection/components/ProjectFeatures';
-import { ProjectHeader } from '@/components/ProjectSection/components/ProjectHeader';
-import { ProjectHighlights } from '@/components/ProjectSection/components/ProjectHighlights';
-import { ProjectNote } from '@/components/ProjectSection/components/ProjectNote';
-import { ProjectStack } from '@/components/ProjectSection/components/ProjectStack';
-import type { ProjectHeaderProps } from '@/components/ProjectSection/types';
+import { ProjectHeader } from './components/ProjectHeader';
+import { ProjectHeaderProps } from './types';
+import { ProjectAbout } from './components/ProjectAbout';
+import { ProjectContext } from './components/ProjectContext';
+import { ProjectDemo } from './components/ProjectDemo';
+import { ProjectHighlights } from './components/ProjectHighlights';
+import { ProjectFeatures } from './components/ProjectFeatures';
+import { ProjectNote } from './components/ProjectNote';
+import { ProjectStack } from './components/ProjectStack';
 
 export const ProjectSection = ({ project, index }: ProjectHeaderProps) => (
   <motion.article
@@ -20,9 +20,7 @@ export const ProjectSection = ({ project, index }: ProjectHeaderProps) => (
     className="bg-card scroll-mt-24 overflow-hidden rounded-2xl border"
   >
     <div className={`h-1.5 bg-linear-to-r ${project.accent}`} />
-
     <ProjectHeader project={project} index={index} />
-
     <main className="flex flex-col gap-12 px-5 py-10 lg:px-8">
       <ProjectAbout project={project} />
       <ProjectContext project={project} />
