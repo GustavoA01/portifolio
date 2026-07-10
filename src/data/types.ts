@@ -3,6 +3,8 @@ export type ProjectHighlight = {
   description: string;
 };
 
+export type ProjectAccessMode = 'live' | 'video';
+
 export type Project = {
   id: string;
   name: string;
@@ -12,6 +14,8 @@ export type Project = {
   problem: string;
   solution: string;
   note?: string;
+  accessMode: ProjectAccessMode;
+  accessLabel?: string;
   iconUrl: string;
   href: string;
   repo: string;

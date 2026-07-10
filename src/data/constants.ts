@@ -1,4 +1,4 @@
-import { Project } from './types';
+import { Project, ProjectAccessMode } from './types';
 
 export const profile = {
   name: 'Gustavo Aguiar',
@@ -29,6 +29,8 @@ export const navigationItems = [
 export const projects: Project[] = [
   {
     id: 'bookly',
+    accessMode: 'live',
+    accessLabel: 'Experimentar agora',
     name: 'Bookly',
     tagline: 'Sua biblioteca pessoal inteligente',
     summary:
@@ -87,6 +89,7 @@ export const projects: Project[] = [
   },
   {
     id: 'next-track',
+    accessMode: 'video',
     name: 'Next Track',
     tagline: 'Recomendações musicais guiadas por conversa',
     summary:
@@ -148,6 +151,7 @@ export const projects: Project[] = [
   },
   {
     id: 'chameleon-wallpaper',
+    accessMode: 'live',
     name: 'Chameleon Wallpaper',
     tagline: 'Controle do papel de parede do computador',
     summary:
@@ -237,3 +241,17 @@ export const projectBaseStack = [
   'shadcn/ui',
   'Jest',
 ];
+
+export const accessConfig: Record<
+  ProjectAccessMode,
+  { label: string; href: (project: Project) => string }
+> = {
+  live: {
+    label: 'Acessar projeto',
+    href: (project) => project.href,
+  },
+  video: {
+    label: 'Ver demo em vídeo',
+    href: (project) => project.youtubeUrl ?? `#${project.id}-demo`,
+  },
+};

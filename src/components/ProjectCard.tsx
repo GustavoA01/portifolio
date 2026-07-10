@@ -10,7 +10,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { projectBaseStack, type Project } from '@/data/constants';
+import { projectBaseStack } from '@/data/constants';
+import type { Project } from '@/data/types';
 import { ProjectIcon } from '@/components/ProjectIcon';
 
 type ProjectCardProps = {

@@ -6,7 +6,7 @@ export const ProjectDemo = ({ project }: ProjectPartProps) => {
   if (!project.demoVideoUrl) return null;
 
   return (
-    <section className="select-none">
+    <section id={`${project.id}-demo`} className="scroll-mt-24 select-none">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <SectionLabel>Demonstração em vídeo</SectionLabel>
         {project.youtubeUrl ? (
