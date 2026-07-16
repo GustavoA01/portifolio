@@ -88,6 +88,65 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'track-log',
+    accessMode: 'live',
+    accessLabel: 'Experimentar agora',
+    name: 'Track Log',
+    tagline: 'Organize o repertório e acompanhe a prática',
+    summary:
+      'App para músicos cadastrarem músicas, organizarem pastas e registrarem sessões de estudo',
+    about:
+      'O Track Log é uma aplicação web para músicos organizarem o repertório e acompanharem a evolução dos estudos. O usuário cadastra músicas com artista, gênero, instrumento, dificuldade e status de aprendizado, agrupa em pastas personalizadas, registra sessões de prática com cronômetro e consulta histórico e estatísticas de progresso.',
+    problem:
+      'Quem estuda instrumento costuma espalhar o repertório entre anotações, playlists e planilhas. Sem um lugar único, fica difícil saber o que está aprendendo, quanto tempo já praticou e quais músicas avançaram de fato.',
+    solution:
+      'O Track Log centraliza biblioteca, pastas e sessões de prática em uma interface responsiva com tema claro e escuro. Firebase cuida da autenticação, Prisma e PostgreSQL persistem músicas, pastas e histórico, e o cronômetro registra cada sessão com duração e observações.',
+    iconUrl: '/project-icons/track-log-icon.jpg',
+    href: 'https://app-track-log.vercel.app/',
+    repo: 'https://github.com/GustavoA01/Track-Log',
+    accent: 'from-amber-400 to-teal-500',
+    highlights: [
+      {
+        title: 'Biblioteca de músicas',
+        description:
+          'Cadastre título, artista, gênero, instrumento, dificuldade, status e links de vídeo ou tablatura.',
+      },
+      {
+        title: 'Pastas personalizadas',
+        description:
+          'Organize o repertório em pastas com cor e capa, associando cada música a um ou mais grupos.',
+      },
+      {
+        title: 'Sessões com cronômetro',
+        description:
+          'Inicie e finalize práticas com timer, registre minutos e anotações por música.',
+      },
+      {
+        title: 'Histórico e estatísticas',
+        description:
+          'Acompanhe sessões anteriores e veja indicadores como tempo total praticado e volume de estudos.',
+      },
+    ],
+    features: [
+      'Autenticação com login, cadastro e recuperação de senha',
+      'Biblioteca de músicas com status de aprendizado e filtros',
+      'Pastas personalizadas com cor e imagem de capa',
+      'Sessões de prática com cronômetro, duração e observações',
+      'Histórico completo das sessões realizadas',
+      'Cards de estatísticas de progresso e tempo praticado',
+    ],
+    integrations: [
+      'Firebase Auth',
+      'Prisma',
+      'PostgreSQL',
+      'TanStack Query',
+      'React Hook Form',
+      'Zod',
+      'Jest',
+      'Testing Library',
+    ],
+  },
+  {
     id: 'next-track',
     accessMode: 'video',
     name: 'Next Track',
