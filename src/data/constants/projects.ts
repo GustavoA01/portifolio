@@ -1,30 +1,4 @@
-import { Project, ProjectAccessMode } from './types';
-
-export const profile = {
-  name: 'Gustavo Aguiar',
-  tagline: 'Desenvolvedor Front-end · React · Next.js · TypeScript',
-  headline:
-    'Desenvolvo interfaces modernas e aplicações completas, desde o front-end ao banco de dados, com integrações de IAs e APIs',
-  github: 'https://github.com/GustavoA01',
-  linkedin: 'https://www.linkedin.com/in/aguiar-gustavo/',
-  email: 'gustavoaguiar14325@gmail.com',
-  phone: '(31) 99610-0766',
-};
-
-export const navigationItems = [
-  {
-    label: 'Projetos',
-    href: '#projetos',
-  },
-  {
-    label: 'Stack',
-    href: '#stack',
-  },
-  {
-    label: 'Contato',
-    href: '#contato',
-  },
-];
+import type { Project } from '../types';
 
 export const projects: Project[] = [
   {
@@ -269,48 +243,3 @@ export const projects: Project[] = [
     ],
   },
 ];
-
-export const stack = [
-  'HTML5',
-  'CSS3',
-  'TypeScript',
-  'Next.js',
-  'React',
-  'React Native',
-  'Tailwind CSS',
-  'shadcn/ui',
-  'Material UI',
-  'Prisma ORM',
-  'Firebase',
-  'TanStack Query',
-  'Axios',
-  'Framer Motion',
-  'React Hook Form',
-  'Zod',
-  'Jest',
-  'Testing Library',
-  'Git',
-  'Vercel',
-];
-
-export const projectBaseStack = [
-  'Next.js 16',
-  'TypeScript',
-  'Tailwind CSS',
-  'shadcn/ui',
-  'Jest',
-];
-
-export const accessConfig: Record<
-  ProjectAccessMode,
-  { label: string; href: (project: Project) => string }
-> = {
-  live: {
-    label: 'Acessar projeto',
-    href: (project) => project.href,
-  },
-  video: {
-    label: 'Ver demo em vídeo',
-    href: (project) => project.youtubeUrl ?? `#${project.id}-demo`,
-  },
-};
